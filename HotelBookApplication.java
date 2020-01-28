@@ -40,7 +40,7 @@ Hotel Booked for 5 days in 3 star hotel Raddisson for the cost of 246.00
 Sorry! you dont have sufficient amount to book any hotel
 Sorry! you dont have sufficient amount to book any hotel
 */
-public class HotelBookChallenge {
+public class HotelBookApplication {
 	public static String bookHotel(Map<Integer,List<Hotel>> hotelDetails,int rating,int days,double money) {
 		double cost;
 		Hotel hoteltoBook;
@@ -113,7 +113,7 @@ public class HotelBookChallenge {
 		int numberOfTestCases=Integer.parseInt(scan.nextLine());
 		for(int count=0;count<numberOfTestCases;count++) {
 			try {
-			System.out.println("Enter hotel rating you want to book");
+			System.out.println("Enter hotel 1 or 2 or 3 rating you want to book");
 			String star=scan.nextLine();
 			Matcher match=pattern.matcher(star);
 			if(!match.matches()) { throw new Exception("invalid rating hotel not available");}
