@@ -113,7 +113,7 @@ public class HotelBookApplication {
 		int numberOfTestCases=Integer.parseInt(scan.nextLine());
 		for(int count=0;count<numberOfTestCases;count++) {
 			try {
-			System.out.println("Enter hotel 1 or 2 or 3 rating you want to book");
+			System.out.println("Enter hotel 1 or 3 or 5 rating you want to book");
 			String star=scan.nextLine();
 			Matcher match=pattern.matcher(star);
 			if(!match.matches()) { throw new Exception("invalid rating hotel not available");}
