@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 
 /*Testcases:
 No of TestCases
-Enter hotel rating you want to book
+Enter hotel 1 or 3 or 5 rating you want to book
 Enter Days you want to stay:
 Enter the money you can spent:
 6
