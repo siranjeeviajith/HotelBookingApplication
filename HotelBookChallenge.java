@@ -33,10 +33,10 @@ Enter the money you can spent:
 700
 
 output:
-Hotel Booked for 6 days in 1 star hotel The Park for the cost of 219.82
+Hotel Booked for 6 days in 1 star hotel Fortune for the cost of 219.82
 Sorry! you dont have sufficient amount to book any hotel
-Hotel Booked for 2 days in 3 star hotel The Park for the cost of 116.00
-Hotel Booked for 5 days in 3 star hotel The Park for the cost of 246.00
+Hotel Booked for 2 days in 3 star hotel RainTree for the cost of 116.00
+Hotel Booked for 5 days in 3 star hotel Raddisson for the cost of 246.00
 Sorry! you dont have sufficient amount to book any hotel
 Sorry! you dont have sufficient amount to book any hotel
 */
@@ -58,7 +58,7 @@ public class HotelBookChallenge {
 		//System.out.println(listOfCost); //to print list of cost of hotel as requested
 		if(cost<= money) {
 			hoteltoBook = costPerHotel.get(cost);
-			return String.format("Hotel Booked for %d days in %d star hotel The Park for the cost of %.2f",days,rating,cost);
+			return String.format("Hotel Booked for %d days in %d star hotel %s for the cost of %.2f",days,rating,hoteltoBook.hotelName,cost);
 		}
 		return "Sorry! you dont have sufficient amount to book any hotel";
 	}
@@ -126,6 +126,7 @@ public class HotelBookChallenge {
 			}
 			catch(Exception e) {
 				System.out.println(e +"\n");
+				
 				
 			}
 		}
