@@ -118,14 +118,16 @@ public class HotelBookApplication {
 			Matcher match=pattern.matcher(star);
 			if(!match.matches()) { throw new Exception("invalid rating hotel not available");}
 			int rating=Integer.parseInt(star);
-			System.out.println("Enter Days you want to stay:");
+			System.out.println("Enter Days 1 to 31 you want to stay:");
 			int days=Integer.parseInt(scan.nextLine());
+			if(!(days >=1 && days<=31)) {throw new Exception("invalid days choose 1 to 31");}
 			System.out.println("Enter the money you can spent:");
 			double money=Double.parseDouble(scan.nextLine());
 			System.out.println(bookHotel(hotelDetails,rating,days,money));
 			}
 			catch(Exception e) {
-				System.out.println(e +"\n");
+				System.out.println(e +" try again\n");
+				count--;
 				
 				
 			}
