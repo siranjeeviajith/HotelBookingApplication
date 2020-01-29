@@ -9,9 +9,9 @@ import java.util.regex.Pattern;
 
 /*Testcases:
 No of TestCases
-Enter hotel 1 or 3 or 5 rating you want to book
-Enter Days you want to stay:
-Enter the money you can spent:
+Enter hotel 1 or 3 or 5 rating you want to book //
+Enter Days you want to stay:                    //for each test cases
+Enter the money you can spent:                  //
 6
 1
 6
@@ -47,10 +47,10 @@ public class HotelBookApplication {
 		List<Hotel>listOfHotels=hotelDetails.getOrDefault(rating,new ArrayList<>());
 		Map<Double,Hotel> costPerHotel=new TreeMap<>();//to get minimum cost of hotel
 		if(listOfHotels.isEmpty()) {
-			return "Sorry! there is no hotel for your rating";
+			return "Sorry! there is no hotel for your rating";///just in case wrong rating
 		}
 		for(Hotel hotel: listOfHotels) {
-			cost=hotel.calculateCost(days);
+			cost=hotel.calculateCost(days);   ///get total cost for particular hotel and storing in a map
 			costPerHotel.put(cost, hotel);
 		}
 		List<Double> listOfCost=new ArrayList<>(costPerHotel.keySet());
@@ -116,18 +116,18 @@ public class HotelBookApplication {
 			System.out.println("Enter hotel 1 or 3 or 5 rating you want to book");
 			String star=scan.nextLine();
 			Matcher match=pattern.matcher(star);
-			if(!match.matches()) { throw new Exception("invalid rating hotel not available");}
+			if(!match.matches()) { throw new Exception("invalid rating hotel not available");}//checking rating is valid.
 			int rating=Integer.parseInt(star);
 			System.out.println("Enter Days 1 to 31 you want to stay:");
 			int days=Integer.parseInt(scan.nextLine());
-			if(!(days >=1 && days<=31)) {throw new Exception("invalid days choose 1 to 31");}
+			if(!(days >=1 && days<=31)) {throw new Exception("invalid days choose 1 to 31");}//checking days are valid
 			System.out.println("Enter the money you can spent:");
 			double money=Double.parseDouble(scan.nextLine());
 			System.out.println(bookHotel(hotelDetails,rating,days,money));
 			}
 			catch(Exception e) {
 				System.out.println(e +" try again\n");
-				count--;
+				count--;//reducing the iteration count in case of wrong input
 				
 				
 			}
